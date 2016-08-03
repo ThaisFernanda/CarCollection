@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.carcollection.DAOImpl.UserDaoImpl;
 import br.com.carcollection.modelo.User;
@@ -60,9 +61,10 @@ public class AdicionaUsuario extends HttpServlet {
 	private void verificaUsuario(HttpServletRequest req, HttpServletResponse resp, User usuario)
 			throws ServletException, IOException {
 		if (usuario != null){
-			req.setAttribute(USUARIO, usuario);
+			HttpSession session = req.getSession();
+			session.setAttribute("USUARIO", usuario);
 			
-			req.getAttribute(USUARIO);
+			
 			RequestDispatcher dispatcher = req.getRequestDispatcher("/sucesso.jsp");
 			dispatcher.forward(req, resp);
 		
@@ -73,4 +75,8 @@ public class AdicionaUsuario extends HttpServlet {
 
 		}
 	}
+	public String logout(HttpSession session) {
+		  session.invalidate();
+		  return "redirect:index.jsp";
+		}
 }

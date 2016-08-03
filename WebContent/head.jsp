@@ -58,18 +58,17 @@
 					<div class="col-md-6">
 						<div class="header_top_right text-right">
 							<ul>
-								<% User usuario = (User)request.getSession().getAttribute("USUARIO");
+								<% User usuario = (User)session.getAttribute("USUARIO");
 								if (usuario == null){%>
-								<li><a href="login.jsp">Registrar / Login</a></li>
-								
+									<li><a href="login.jsp">Registrar / Login</a></li>
 								<%} else {%>
-								<li><% out.println(usuario.getNome());%></li>
-								<a href="logout">Sair do sistema</a>
+									<li><a><% out.println(usuario.getNome());%></a></li>
+									</br><a href="logout">Sair do sistema</a>
 								<%}%>
 									
 							</ul>
 						</div>
-					</div>
+					</div> 
 				</div>
 			</div>
 		</div>
