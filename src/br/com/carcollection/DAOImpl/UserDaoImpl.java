@@ -161,6 +161,9 @@ public class UserDaoImpl implements InterfaceCrudDAO<User>{
 			ResultSet rs = stmt.executeQuery();
 			
 			if(rs.next()){
+				user.setNome(rs.getString("nome"));
+				user.setEmail(rs.getString("email"));
+				user.setLogin(rs.getString("login"));
 				return user;
 			}
 			

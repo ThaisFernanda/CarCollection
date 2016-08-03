@@ -1,4 +1,5 @@
-
+<%@page import="br.com.carcollection.modelo.User" %>
+<%@page import="br.com.carcollection.web.AdicionaUsuario" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -57,9 +58,14 @@
 					<div class="col-md-6">
 						<div class="header_top_right text-right">
 							<ul>
+								<% User usuario = (User)request.getSession().getAttribute("USUARIO");
+								if (usuario == null){%>
 								<li><a href="login.jsp">Registrar / Login</a></li>
 								
-<%-- 									<%= (request.getAttribute(USUARIO))%>  --%>
+								<%} else {%>
+								<li><% out.println(usuario.getNome());%></li>
+								<a href="logout">Sair do sistema</a>
+								<%}%>
 									
 							</ul>
 						</div>

@@ -49,11 +49,10 @@ public class AdicionaUsuario extends HttpServlet {
 			user.setLogin( req.getParameter("login")); 
 			user.setSenha( req.getParameter("senha"));
 			
-			
 			User usuario = dao.validaUsuario(user.getLogin(), user.getSenha());
 			
 			verificaUsuario(req, resp, usuario);
-				
+			
 		}
 		
 	}
@@ -64,12 +63,14 @@ public class AdicionaUsuario extends HttpServlet {
 			req.setAttribute(USUARIO, usuario);
 			
 			req.getAttribute(USUARIO);
-			 RequestDispatcher dispatcher = req.getRequestDispatcher("/sucesso.jsp");
-			 dispatcher.forward(req, resp);
-			
+			RequestDispatcher dispatcher = req.getRequestDispatcher("/sucesso.jsp");
+			dispatcher.forward(req, resp);
+		
 		} else {
 			RequestDispatcher dispatcher = req.getRequestDispatcher("/erro.jsp");
-			 dispatcher.forward(req, resp);				
+			 dispatcher.forward(req, resp);	
+			 usuario = null;
+
 		}
 	}
 }
