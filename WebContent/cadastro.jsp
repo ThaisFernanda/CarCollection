@@ -1,61 +1,5 @@
 <jsp:include page="head.jsp" />
 
-<body>
-	<!-- Header-Section-Strat  -->
-	<header>
-		<div class="container">
-			<div class="header_top">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="header_top_left float-left">
-							<ul class="social_icon">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-							</ul>
-							<ul class="social_others">
-								<li><a><i class="fa fa-phone"></i>(81) 3333-3333</a></li>
-								<li><a href="#"><i class="fa fa-envelope-o"></i>atendimento@carcollection.com</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="header_top_right text-right">
-							<ul>
-								<li><a href="login.jsp">Registrar / Login</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="row mega_relative">
-				<div class="col-xs-12 col-sm-2">
-					<div class="logo head_lo">
-						<a href="index.jsp"><img src="images/logo.png" alt="Logo" /></a>
-					</div>
-				</div>
-				<div class="col-sm-10">
-					<div class="mainmenu float-right">
-						<nav>
-							<ul>
-								<li><a href="cadastro.jsp">CADASTRO</a></li>
-								<li><a href="buscaCarro">CATALOGO </a></li>
-								<li><a href="contato.jsp">CONTATO</a></li>
-								
-							</ul>
-						</nav>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-	<!-- mobile-menu-area start -->
-	<!-- mobile-menu-area end -->
-	<!-- Header-Section-End  -->
-
 	<!-- Contact-Section-End -->
 	<div class="contact_us section-padding">
 		<div class="container">
@@ -254,41 +198,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- Contact-Section-End -->
-	<!-- Footer-Section-Start -->
-	<footer>
-		<div class="footer_top footer-padding">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12 col-sm-6">
-						<div class="newsletter">
-							<h4>Cadastre-se e receba novidades</h4>
-						</div>
-					</div>
-					<div class="col-sm-12 col-sm-6">
-						<div class="newsletter text-right">
-							<input class="news_input" type="text" value=""
-								placeholder="E-mail" /> <input class="subscribe_btn"
-								type="button" value="Inscrever" />
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="footer_bottom footer-padding">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6 col-xs-12">
-						<div class="copyright">
-							<p>
-								<p>Copyright 2016 <a href="http://designscrazed.org/"></a>  Todos os Direiros Reservados</p>
-
-							</p>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
+	
 
 <jsp:include page="footer.jsp" />

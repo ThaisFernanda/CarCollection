@@ -58,6 +58,9 @@
 						<div class="header_top_right text-right">
 							<ul>
 								<li><a href="login.jsp">Registrar / Login</a></li>
+								
+<%-- 									<%= (request.getAttribute(USUARIO))%>  --%>
+									
 							</ul>
 						</div>
 					</div>
