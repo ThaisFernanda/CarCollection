@@ -1,95 +1,6 @@
 <%@page import="br.com.carcollection.modelo.Car" %>
 <%@page import="br.com.carcollection.web.ExibeDetalhesCarro" %>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cadastro || Car Collection</title>
-<!-- All css Files Here -->
-<!-- fonts -->
-<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,500'
-	rel='stylesheet' type='text/css'>
-<!-- bootstrap css -->
-<link rel="stylesheet" href="css/bootstrap.min.css" />
-<!-- fontawesome css -->
-<link rel="stylesheet" href="css/font-awesome.min.css" />
-<!-- revolution banner css settings -->
-<link rel="stylesheet" type="text/css"
-	href="lib/rs-plugin/css/settings.css" media="screen" />
-<!-- style css -->
-<link rel="stylesheet" href="style.css">
-<!-- mobilemenu css -->
-<link rel="stylesheet" href="css/meanmenu.min.css" />
-<!-- responsive css -->
-<link rel="stylesheet" href="css/responsive.css" />
-<!-- favicon -->
-<link rel="shortcut icon" href="images/favicon.png" />
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body>
-	<!-- Header-Section-Strat  -->
-	<header>
-		<div class="container">
-			<div class="header_top">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="header_top_left float-left">
-							<ul class="social_icon">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-							</ul>
-							<ul class="social_others">
-								<li><a><i class="fa fa-phone"></i>(81) 3333-3333</a></li>
-								<li><a href="#"><i class="fa fa-envelope-o"></i>atendimento@carcollection.com</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="header_top_right text-right">
-							<ul>
-								<li><a href="login.jsp">Registrar / Login</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="row mega_relative">
-				<div class="col-xs-12 col-sm-2">
-					<div class="logo head_lo">
-						<a href="index.jsp"><img src="images/logo.png" alt="Logo" /></a>
-					</div>
-				</div>
-				<div class="col-sm-10">
-					<div class="mainmenu float-right">
-						<nav>
-							<ul>
-								<li><a href="cadastro.jsp">CADASTRO</a></li>
-								<li><a href="buscaCarro">CATALOGO </a></li>
-								<li><a href="contato.jsp">CONTATO</a></li>
-							</ul>
-						</nav>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-	<!-- mobile-menu-area start -->
-	<!-- mobile-menu-area end -->
-	<!-- Header-Section-End  -->
+<jsp:include page="head.jsp" />
 
 	<!-- Contact-Section-End -->
 	<div class="contact_us section-padding">
@@ -108,22 +19,22 @@
 							                       <p>
 							                            <strong>Marca:</strong> <% out.println(carro.getMarca());%><br>
 							                            <strong>Modelo:</strong> <% out.println(carro.getModelo());%> GT<br>
-							                            <strong>Ano FabricaÃ§Ã£o/Ano Modelo:</strong> <% out.println(carro.getAnoFabricacao());%><br>
+							                            <strong>Ano Fabricação/Ano Modelo:</strong> <% out.println(carro.getAnoFabricacao());%><br>
 							                            <strong>Cor:</strong> <% out.println(carro.getCor());%><br>
 							                            <strong>Portas:</strong> 2<br>
-							                            <strong>DimensÃµes - Comp./Largura/Altura (mm): </strong><% out.println(carro.getDimensoesCLA() );%><br>
+							                            <strong>Dimensões - Comp./Largura/Altura (mm): </strong><% out.println(carro.getDimensoesCLA() );%><br>
 							                            <strong>Ocupantes:</strong> <% out.println(carro.getOcupantes());%><br>
 							                        </p>
 							                    </li>
 							                    <li style="height: 204px;">
 							                         <p>
-									                   <strong>CombustÃ­vel:</strong> <% out.println(carro.getMecSseg().getCombustivel());%><br>
+									                   <strong>Combustível:</strong> <% out.println(carro.getMecSseg().getCombustivel());%><br>
 									                   <strong>Motor:</strong> <% out.println(carro.getMecSseg().getMotor());%><br>
-									                   <strong>PotÃªncia:</strong> <% out.println(carro.getMecSseg().getMotor());%> CV<br>
-									                   <strong>Velocidade MÃ¡xima:</strong> <% out.println(carro.getMecSseg().getVelocidadeMax());%> Km/h<br>
-									                   <strong>CÃ¢mbio:</strong> <% out.println(carro.getMecSseg().getCambio());%>  <br>
-									                   <strong>TraÃ§Ã£o:</strong> <% out.println(carro.getMecSseg().getTracao());%><br>
-									                   <strong>AceleraÃ§Ã£o 0-100km/h:</strong> <% out.println(carro.getMecSseg().getAceleracao());%> Segundos<br>
+									                   <strong>Potência:</strong> <% out.println(carro.getMecSseg().getMotor());%> CV<br>
+									                   <strong>Velocidade Máxima:</strong> <% out.println(carro.getMecSseg().getVelocidadeMax());%> Km/h<br>
+									                   <strong>Câmbio:</strong> <% out.println(carro.getMecSseg().getCambio());%>  <br>
+									                   <strong>Tração:</strong> <% out.println(carro.getMecSseg().getTracao());%><br>
+									                   <strong>Aceleração 0-100km/h:</strong> <% out.println(carro.getMecSseg().getAceleracao());%> Segundos<br>
 									                   <strong>Freios:</strong> <% out.println(carro.getMecSseg().getFreios());%><br>
 									                   <strong>Rodas:</strong> <% out.println(carro.getMecSseg().getRodas());%><br>
 				                              		 </p>
@@ -217,3 +128,5 @@
 	<script src="js/main.js"></script>
 </body>
 </html>
+
+<jsp:include page="footer.jsp" />

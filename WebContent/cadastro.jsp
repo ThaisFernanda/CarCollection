@@ -1,38 +1,5 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<jsp:include page="head.jsp" />
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cadastro || Car Collection</title>
-<!-- All css Files Here -->
-<!-- fonts -->
-<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,500'
-	rel='stylesheet' type='text/css'>
-<!-- bootstrap css -->
-<link rel="stylesheet" href="css/bootstrap.min.css" />
-<!-- fontawesome css -->
-<link rel="stylesheet" href="css/font-awesome.min.css" />
-<!-- revolution banner css settings -->
-<link rel="stylesheet" type="text/css"
-	href="lib/rs-plugin/css/settings.css" media="screen" />
-<!-- style css -->
-<link rel="stylesheet" href="style.css">
-<!-- mobilemenu css -->
-<link rel="stylesheet" href="css/meanmenu.min.css" />
-<!-- responsive css -->
-<link rel="stylesheet" href="css/responsive.css" />
-<!-- favicon -->
-<link rel="shortcut icon" href="images/favicon.png" />
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
 <body>
 	<!-- Header-Section-Strat  -->
 	<header>
@@ -95,7 +62,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="contact_us">
-						<h4>Cadastre as informaÃ§Ãµes do seu carro.</h4>
+						<h4>Cadastre as informações do seu carro.</h4>
 						
 						<form action="adicionaCarro" method="POST" class="form-horizontal" role="form">
 
@@ -108,14 +75,14 @@
 
 								<div class="col-sm-3">
 									<select name="portas"  class="form-control" >
-									  <option value="">-- NÃºmero de Portas --</option>
+									  <option value="">-- Número de Portas --</option>
 									  <option value="2">2 Portas</option>
 									  <option value="4">4 Portas</option>
 									</select>
 								</div>
 								<div class="col-sm-3">
 									<select name="ocupantes"  class="form-control" >
-									  <option value="">-- NÃºmero de Ocupantes --</option>
+									  <option value="">-- Número de Ocupantes --</option>
 									  <option value="2">2 Lugares</option>
 									  <option value="5">5 Lugares</option>
 									  <option value="6">6 Lugares</option>
@@ -157,7 +124,7 @@
 								 	<select name="conversivel"  class="form-control" >
 									  <option value="">-- Conversivel --</option>
 									  <option value="true">Sim</option>
-									  <option value="false">NÃ£o</option>
+									  <option value="false">Não</option>
 									</select> 
 								</div>
 								<div class="col-sm-3">
@@ -192,7 +159,7 @@
 									  <option value="Gasolina">Gasolina</option>
 									  <option value="Etanol">Etanol</option>
 									  <option value="Diesel">Diesel</option>
-									  <option value="GNV">GÃ¡s Natural (GNV)</option>
+									  <option value="GNV">Gás Natural (GNV)</option>
 									</select>
 								</div>
 
@@ -211,15 +178,15 @@
 							<div class="form-group">
 								<div class="col-sm-3">
 									<select name="cambio"  class="form-control" >
-									  <option value="">-- CÃ¢mbio --</option>
+									  <option value="">-- Câmbio --</option>
 									  <option value="CVT">CVTs</option>
-									  <option value="automatico">CÃ¢mbio automÃ¡tico</option>
-									  <option value="semiautomatico">CÃ¢mbio SemiautomÃ¡tico</option>
+									  <option value="automatico">Câmbio automático</option>
+									  <option value="semiautomatico">Câmbio Semiautomático</option>
 									</select>
 								</div>
 								<div class="col-sm-3">
 									<select name="tracao"  class="form-control" >
-									  <option value="">-- TraÃ§Ã£o --</option>
+									  <option value="">-- Tração --</option>
 									  <option value="dianteira">Dianteira</option>
 									  <option value="integral">Integral</option>
 									  <option value="traseira">Traseira</option>
@@ -233,7 +200,7 @@
 									  <option value="ar">Ar</option>
 									  <option value="disco">Disco</option>
 									  <option value="tambor">Tambor</option>
-									  <option value="vacuo">VÃ¡cuo</option>
+									  <option value="vacuo">Vácuo</option>
 									</select> 
 								</div>
 
@@ -253,11 +220,11 @@
 
 								<div class="col-sm-3">
 									<select name="direcao"  class="form-control" >
-									  <option value="">-- DireÃ§Ã£o --</option>
-									  <option value="eletrica">ElÃ©trica</option>
-									  <option value="eletrohidraulica">EletrohidrÃ¡ulica</option>
-									  <option value="eletromecanica ">EletromecÃ¢nica</option>
-									  <option value="hidraulica">HidrÃ¡ulica</option>
+									  <option value="">-- Direção --</option>
+									  <option value="eletrica">Elétrica</option>
+									  <option value="eletrohidraulica">Eletrohidráulica</option>
+									  <option value="eletromecanica ">Eletromecânica</option>
+									  <option value="hidraulica">Hidráulica</option>
 									</select> 
 								</div>
 
@@ -277,7 +244,7 @@
 							<div class="form-group">
 								<div class="col-sm-12 text-center">
 									<button type="submit"
-										class=" shop_now_btn btn btn-default hvr-bounce-to-left">Cadastrar AutomÃ³vel</button>
+										class=" shop_now_btn btn btn-default hvr-bounce-to-left">Cadastrar Automóvel</button>
 								</div>
 							</div>
 						</form>
@@ -323,46 +290,5 @@
 				</div>
 			</div>
 		</div>
-	</footer>
-	<!-- Footer-Section-End -->
-	<!-- All js Files Here -->
-	<!-- jquery-1.11.3 -->
-	<script src="js/jquery-1.11.3.min.js"></script>
-	<!-- bootstrap js -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- revolution js -->
-	<script type="text/javascript"
-		src="lib/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-	<script type="text/javascript"
-		src="lib/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-	<script src="lib/rs-plugin/rs.home.js"></script>
-	<!-- search-box js -->
-	<script src="js/search-box.js"></script>
-	<!-- scrollUp js -->
-	<script src="js/jquery.scrollUp.js"></script>
-	<!-- mobilemenu js -->
-	<script src="js/jquery.meanmenu.js"></script>
-	<!-- Google Map js -->
-	<script src="https://maps.googleapis.com/maps/api/js"></script>
-	<script>
-		function initialize() {
-			var mapOptions = {
-				zoom : 15,
-				scrollwheel : false,
-				center : new google.maps.LatLng(40.663293, -73.956351)
-			};
-			var map = new google.maps.Map(document.getElementById('googleMap'),
-					mapOptions);
-			var marker = new google.maps.Marker({
-				position : map.getCenter(),
-				animation : google.maps.Animation.BOUNCE,
-				icon : 'images/map-marker.png',
-				map : map
-			});
-		}
-		google.maps.event.addDomListener(window, 'load', initialize);
-	</script>
-	<!-- main js -->
-	<script src="js/main.js"></script>
-</body>
-</html>
+
+<jsp:include page="footer.jsp" />

@@ -1,3 +1,4 @@
+<jsp:include page="head.jsp" />
 
 	<div class="slider_area">
 		<div class="fullwidthbanner">
@@ -487,3 +488,4 @@
 			</div>
 		</div>
 	</section>
+<jsp:include page="footer.jsp" />
