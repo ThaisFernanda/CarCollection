@@ -1,4 +1,5 @@
 <%@page import="br.com.carcollection.modelo.Car" %>
+<%@page import="br.com.carcollection.modelo.User" %>
 <%@page import="br.com.carcollection.web.ExibeDetalhesCarro" %>
 <jsp:include page="head.jsp" />
 
@@ -38,11 +39,24 @@
 									                   <strong>Freios:</strong> <% out.println(carro.getMecSseg().getFreios());%><br>
 									                   <strong>Rodas:</strong> <% out.println(carro.getMecSseg().getRodas());%><br>
 				                              		 </p>
+				                              		
 				                    			</li>
 				                    		</ul>
 							</div>
 							
 						</form>
+
+						 <form action="exibeDetalhes" method="POST" class="form-horizontal" role="form">
+						 	<input type="hidden" name="funcao" value="excluir"/>
+						 	<p>
+				            <% User usuario = (User)session.getAttribute("USUARIO");
+								if (usuario != null){%>
+								<input type="submit" value="Excluir Carro"/>
+							<%} %>	
+							</p>
+						</form>
+				                              		 	
+				                              		
 					</div>
 				</div>
 

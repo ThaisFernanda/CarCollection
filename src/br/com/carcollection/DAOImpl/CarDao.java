@@ -79,11 +79,14 @@ public class CarDao implements InterfaceCrudDAO<Car>{
 		
 		try {
 			PreparedStatement stmt = conexaoJDBC.prepareStatement(SQL.DELETA_CARRO);
+			PreparedStatement stmt2 = conexaoJDBC.prepareStatement(SQL.DELETA_MEC_SEG);
 			stmt.setInt(1,  id);
+			stmt2.setInt(1,  id);
 
 			stmt.execute();
+			stmt2.execute();
 			stmt.close();
-
+			stmt2.close();
 		} catch (SQLException e) {
 			System.out.println("Erro ao tentar deletar CARRO: " + e.getMessage());
 			e.printStackTrace();

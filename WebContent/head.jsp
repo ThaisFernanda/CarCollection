@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cadastro || Car Collection</title>
+<title>Car Collection</title>
 <!-- All css Files Here -->
 <!-- fonts -->
 <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,500'
@@ -63,7 +63,10 @@
 									<li><a href="login.jsp">Registrar / Login</a></li>
 								<%} else {%>
 									<li><a><% out.println(usuario.getNome());%></a></li>
-									</br><a href="logout">Sair do sistema</a>
+										<li><form action="adicionaUsuario" method="POST" class="form-horizontal" role="form">
+										<input type="hidden" name="funcao" value="logout"/>
+											<input type="submit" value="Logout" />
+										</form></li>
 								<%}%>
 									
 							</ul>
@@ -83,7 +86,9 @@
 					<div class="mainmenu float-right">
 						<nav>
 							<ul>
+							<% if (usuario != null){%>
 								<li><a href="cadastro.jsp">CADASTRO</a></li>
+								<%}%>
 								<li><a href="buscaCarro">CATALOGO </a></li>
 								<li><a href="contato.jsp">CONTATO</a></li>
 							</ul>

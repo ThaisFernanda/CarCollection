@@ -9,13 +9,13 @@ public class SQL {
 	
 	public static final String INSERE_CARRO = "INSERT INTO carro (portas,ocupantes,marca,modelo,cor,anoFabricacao,dimensoesCLA,placa,conversivel,quilometragem,valor)  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";		
 	public static final String UPDATE_CARRO = "update carro set marca_id = ?,portas = ?,ocupantes = ?,modelo = ?,cor = ?,anoFabricacao = ?,dimensoesCLA = ?,plana = ?, where id = ?";	
-	public static final String DELETA_CARRO = "delete from carro where id = ?";
+	public static final String DELETA_CARRO = "delete from carro where  id_carro = ?";
 	public static final String BUSCA_TODOS_CARRO = "Select * from carro";
-	public static final String BUSCA_CARRO = "Select * from carro where id = ?";
+	public static final String BUSCA_CARRO = "Select * from carro where  id_carro = ?";
 	
 	public static final String INSERE_MEC_SEG = "insert into mecanica_seguranca (carro_id,combustivel,motor,potencia,velocidade,cambio,tracao,aceleracao_0a100,freios,rodas,airbag,direcao_hidraulica) values (?,?,?,?,?,?,?,?,?,?,?,?)";	
 	public static final String UPDATE_MEC_SEG = "update mecanica_seguranca set carro_id = ?,combustivel = ?,motor = ?,potencia = ?,velocidade = ?,cambio = ?,tracao = ?,aceleracao_0a100 = ?,freios = ?,rodas = ?,airbag = ?,direcao_hidraulica = ? where id = ?";	
-	public static final String DELETA_MEC_SEG = "delete from mecanica_seguranca where id = ?";
+	public static final String DELETA_MEC_SEG = "delete from mecanica_seguranca where carro_id = ?";
 	public static final String BUSCA_MEC_SEG = "Select * from mecanica_seguranca where id = ?";
 
 	public static final String INSERE_OFERTA = "insert into oferta (usuario_id,carro_id,mensagem,data) values (?,?,?,?)";	

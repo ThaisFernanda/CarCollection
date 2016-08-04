@@ -19,7 +19,7 @@ public class AdicionaUsuario extends HttpServlet {
 	
 	
 	private static final long serialVersionUID = 1L;
-	private final String USUARIO = "usuario";
+	
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)	throws ServletException, IOException {
 
@@ -27,25 +27,30 @@ public class AdicionaUsuario extends HttpServlet {
 			
 		User user = new User();
 		UserDaoImpl dao = new UserDaoImpl();
+		AdicionaUsuario add = new AdicionaUsuario();
 		
 		if ("cadastro".equals(funcao)){
 
+			if(req.getParameter("nome")!= "" && req.getParameter("login")!= "" && req.getParameter("senha")!= "" && req.getParameter("email") != ""){
+				user.setNome(req.getParameter("nome"));
+				user.setLogin( req.getParameter("login")); 
+				user.setSenha( req.getParameter("senha"));
+				user.setEmail(req.getParameter("email"));
+				user.setEndereco(req.getParameter("endereco"));
+				user.setTelefone(req.getParameter("telefone"));
+				
+				RequestDispatcher dispatcher = req.getRequestDispatcher("/sucesso.jsp");
+				dispatcher.forward(req, resp);
+				
+				dao.insert(user);
+				req.setAttribute("user", user);
+			} else {
+				RequestDispatcher dispatcher = req.getRequestDispatcher("/erro.jsp");
+				dispatcher.forward(req, resp);	
+			}
 			
-			user.setNome(req.getParameter("nome"));
-			user.setLogin( req.getParameter("login")); 
-			user.setSenha( req.getParameter("senha"));
-			user.setEmail(req.getParameter("email"));
-			user.setEndereco(req.getParameter("endereco"));
-			user.setTelefone(req.getParameter("telefone"));
-			
-			 RequestDispatcher dispatcher = req.getRequestDispatcher("/sucesso.jsp");
-			 dispatcher.forward(req, resp);
-			
-			
-			dao.insert(user);
-			req.setAttribute("user", user);
 		
-		} else {
+		} else if ("login".equals(funcao)){
 			
 			user.setLogin( req.getParameter("login")); 
 			user.setSenha( req.getParameter("senha"));
@@ -54,6 +59,15 @@ public class AdicionaUsuario extends HttpServlet {
 			
 			verificaUsuario(req, resp, usuario);
 			
+		} else if ("logout".equals(funcao)){
+			add.logout(req.getSession());
+			
+			RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
+			dispatcher.forward(req, resp);
+		} else {
+			
+			RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
+			dispatcher.forward(req, resp);
 		}
 		
 	}
@@ -65,7 +79,7 @@ public class AdicionaUsuario extends HttpServlet {
 			session.setAttribute("USUARIO", usuario);
 			
 			
-			RequestDispatcher dispatcher = req.getRequestDispatcher("/sucesso.jsp");
+			RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
 			dispatcher.forward(req, resp);
 		
 		} else {
@@ -75,8 +89,8 @@ public class AdicionaUsuario extends HttpServlet {
 
 		}
 	}
-	public String logout(HttpSession session) {
+	
+	public void logout(HttpSession session) {
 		  session.invalidate();
-		  return "redirect:index.jsp";
 		}
 }
