@@ -63,7 +63,7 @@ public class ExibeDetalhesCarro extends HttpServlet   {
 			
 			try {
 				// populando o carro
-				
+				carro.setId(Integer.valueOf(id));
 				carro.setPortas(Integer.valueOf(req.getParameter("portas")));
 				carro.setOcupantes(Integer.valueOf(req.getParameter("ocupantes")));
 				carro.setMarca(req.getParameter("marca"));
@@ -86,10 +86,9 @@ public class ExibeDetalhesCarro extends HttpServlet   {
 				mecanica.setFreios(req.getParameter("freios"));
 				mecanica.setAirBag(req.getParameter("airBag"));
 				mecanica.setAceleracao(Double.valueOf(req.getParameter("aceleracao")));
-				mecanica.setDirecao(req.getParameter("direcao"));
 				mecanica.setRodas(req.getParameter("rodas"));
 
-				carro.setMecSseg(mecanica);
+				//carro.setMecSseg(mecanica);
 				dao.updateCarro(carro, mecanica);
 				
 				 RequestDispatcher dispatcher = req.getRequestDispatcher("/sucesso.jsp");

@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
+
 import br.com.carcollection.modelo.Car;
 import br.com.carcollection.modelo.MecanicaSeguranca;
 import br.com.carcollection.util.ConnectionFactory;
@@ -57,26 +59,29 @@ public class CarDao implements InterfaceCrudDAO<Car>{
 			PreparedStatement stmt = conexaoJDBC.prepareStatement(SQL.UPDATE_CARRO);
 			PreparedStatement stmt2 = conexaoJDBC.prepareStatement(SQL.UPDATE_MEC_SEG);
 			
-			stmt.setString(1, carro.getMarca());
-			stmt.setInt(2, carro.getPortas());
-			stmt.setInt(3, carro.getOcupantes());
+			stmt.setInt(1, carro.getPortas());
+			stmt.setInt(2, carro.getOcupantes());
+			stmt.setString(3, carro.getMarca());
 			stmt.setString(4, carro.getModelo());
 			stmt.setString(5, carro.getCor());
 			stmt.setString(6, carro.getAnoFabricacao());
-			stmt.setString(8, carro.getDimensoesCLA());
-			stmt.setString(9, carro.getPlaca());
-			stmt.setInt(10,  carro.getId());
-			
-			stmt2.setString(1, carro.getMecSseg().getCombustivel());
-			stmt2.setString(2, carro.getMecSseg().getMotor());
-			stmt2.setInt(3, carro.getMecSseg().getPotencia());
-			stmt2.setInt(4, carro.getMecSseg().getVelocidadeMax());
-			stmt2.setString(5, carro.getMecSseg().getCambio());
-			stmt2.setString(6, carro.getMecSseg().getTracao());
-			stmt2.setDouble(7, carro.getMecSseg().getAceleracao());
-			stmt2.setString(8, carro.getMecSseg().getFreios());
-			stmt2.setString(9, carro.getMecSseg().getRodas());
-			stmt2.setString(10, carro.getMecSseg().getAirBag());
+			stmt.setString(7, carro.getDimensoesCLA());
+			stmt.setString(8, carro.getPlaca());
+			stmt.setBoolean(9, carro.isConversivel());
+			stmt.setDouble(10, carro.getQuilometragem());
+			stmt.setDouble(11, carro.getValor());
+			stmt.setInt(12,  carro.getId());
+
+			stmt2.setString(1, mecanica.getCombustivel());
+			stmt2.setString(2, mecanica.getMotor());
+			stmt2.setInt(3, mecanica.getPotencia());
+			stmt2.setInt(4, mecanica.getVelocidadeMax());
+			stmt2.setString(5, mecanica.getCambio());
+			stmt2.setString(6, mecanica.getTracao());
+			stmt2.setDouble(7, mecanica.getAceleracao());
+			stmt2.setString(8, mecanica.getFreios());
+			stmt2.setString(9, mecanica.getRodas());
+			stmt2.setString(10, mecanica.getAirBag());
 			stmt2.setInt(11,  carro.getId());
 			
 			stmt.execute();
@@ -86,7 +91,6 @@ public class CarDao implements InterfaceCrudDAO<Car>{
 		} catch (SQLException e) {
 			System.out.println("Erro na atualização do carro: " + e.getMessage());
 			e.printStackTrace();
-
 		}
 	}
 
