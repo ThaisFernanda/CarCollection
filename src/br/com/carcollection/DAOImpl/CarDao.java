@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.carcollection.modelo.Car;
+import br.com.carcollection.modelo.MecanicaSeguranca;
 import br.com.carcollection.util.ConnectionFactory;
 import br.com.carcollection.util.SQL;
 
@@ -49,11 +50,13 @@ public class CarDao implements InterfaceCrudDAO<Car>{
 		}
 	}
 
-	@Override
-	public void update(Car carro) {
+	
+	public void updateCarro(Car carro, MecanicaSeguranca mecanica) {
 		// TODO Auto-generated method stub
 		try {
 			PreparedStatement stmt = conexaoJDBC.prepareStatement(SQL.UPDATE_CARRO);
+			PreparedStatement stmt2 = conexaoJDBC.prepareStatement(SQL.UPDATE_MEC_SEG);
+			
 			stmt.setString(1, carro.getMarca());
 			stmt.setInt(2, carro.getPortas());
 			stmt.setInt(3, carro.getOcupantes());
@@ -63,10 +66,23 @@ public class CarDao implements InterfaceCrudDAO<Car>{
 			stmt.setString(8, carro.getDimensoesCLA());
 			stmt.setString(9, carro.getPlaca());
 			stmt.setInt(10,  carro.getId());
-
+			
+			stmt2.setString(1, carro.getMecSseg().getCombustivel());
+			stmt2.setString(2, carro.getMecSseg().getMotor());
+			stmt2.setInt(3, carro.getMecSseg().getPotencia());
+			stmt2.setInt(4, carro.getMecSseg().getVelocidadeMax());
+			stmt2.setString(5, carro.getMecSseg().getCambio());
+			stmt2.setString(6, carro.getMecSseg().getTracao());
+			stmt2.setDouble(7, carro.getMecSseg().getAceleracao());
+			stmt2.setString(8, carro.getMecSseg().getFreios());
+			stmt2.setString(9, carro.getMecSseg().getRodas());
+			stmt2.setString(10, carro.getMecSseg().getAirBag());
+			stmt2.setInt(11,  carro.getId());
+			
 			stmt.execute();
+			stmt2.execute();
+			stmt2.close();
 			stmt.close();
-
 		} catch (SQLException e) {
 			System.out.println("Erro na atualização do carro: " + e.getMessage());
 			e.printStackTrace();
@@ -235,7 +251,11 @@ public Car recuperaCarroMecanica(Integer idCarro){
 	return carro ;
 }
 
-
+@Override
+public void update(Car obj) {
+	// TODO Auto-generated method stub
+	
+}
 
 
 

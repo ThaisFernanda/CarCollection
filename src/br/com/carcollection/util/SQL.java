@@ -14,7 +14,7 @@ public class SQL {
 	public static final String BUSCA_CARRO = "Select * from carro where  id_carro = ?";
 	
 	public static final String INSERE_MEC_SEG = "insert into mecanica_seguranca (carro_id,combustivel,motor,potencia,velocidade,cambio,tracao,aceleracao_0a100,freios,rodas,airbag,direcao_hidraulica) values (?,?,?,?,?,?,?,?,?,?,?,?)";	
-	public static final String UPDATE_MEC_SEG = "update mecanica_seguranca set carro_id = ?,combustivel = ?,motor = ?,potencia = ?,velocidade = ?,cambio = ?,tracao = ?,aceleracao_0a100 = ?,freios = ?,rodas = ?,airbag = ?,direcao_hidraulica = ? where id = ?";	
+	public static final String UPDATE_MEC_SEG = "update mecanica_seguranca set combustivel = ?,motor = ?,potencia = ?,velocidade = ?,cambio = ?,tracao = ?,aceleracao_0a100 = ?,freios = ?,rodas = ?,airbag = ? where carro_id = ?";	
 	public static final String DELETA_MEC_SEG = "delete from mecanica_seguranca where carro_id = ?";
 	public static final String BUSCA_MEC_SEG = "Select * from mecanica_seguranca where id = ?";
 

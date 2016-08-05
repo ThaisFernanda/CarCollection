@@ -16,6 +16,4 @@ public interface InterfaceCrudDAO<T> {
 	public T recupera(int id);  //  (RECUPERA UM ELEMENTO)
 	
 
-	
-	
 }
