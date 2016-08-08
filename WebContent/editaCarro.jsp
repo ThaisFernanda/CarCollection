@@ -1,6 +1,4 @@
 <%@page import="br.com.carcollection.modelo.Car" %>
-<%@page import="br.com.carcollection.modelo.User" %>
-<%@page import="br.com.carcollection.web.ExibeDetalhesCarro" %>
 <jsp:include page="head.jsp" />
 
 	<!-- Contact-Section-End -->
@@ -9,17 +7,17 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="contact_us">
-						<h4>Detalhes do Carro</h4>
-						
+						<h4>Atualize as informações do seu carro.</h4>
 						<% Car carro = (Car) request.getAttribute("carro"); %>
 						
-						<form action="adicionaCarro" method="POST" class="form-horizontal" role="form">
+						<form action="editaCarro" method="POST" class="form-horizontal" role="form">
+
 							<div class="form-group">
 											<ul class="form-horizontal">
 			                    				<li style="height: 204px;">
 							                       <p>
-							                            <strong>Marca:</strong> <% out.println(carro.getMarca());%><br>
-							                            <strong>Modelo:</strong> <% out.println(carro.getModelo());%> GT<br>
+							                            <strong>Marca:</strong><br>
+							                            <strong>Modelo:</strong> <% out.println(carro.getModelo());%><br>
 							                            <strong>Ano Fabricação/Ano Modelo:</strong> <% out.println(carro.getAnoFabricacao());%><br>
 							                            <strong>Cor:</strong> <% out.println(carro.getCor());%><br>
 							                            <strong>Portas:</strong> <% out.println(carro.getPortas());%><br>
@@ -43,24 +41,18 @@
 				                    			</li>
 				                    		</ul>
 							</div>
-							
-						</form>
-						<form action="editaCarro" method="GET" class="form-horizontal" role="form">
-							<% User usuario = (User)session.getAttribute("USUARIO");
-							if (usuario != null){%>		
-								<div class="shop_now_btn">
-									<a href="editaCarro?idCarro=<%=carro.getId()%>">EDITAR</a>
+							<div class="form-group">
+								<div class="col-sm-12 text-center">
+									<button type="submit"
+										class=" shop_now_btn btn btn-default hvr-bounce-to-left">Cadastrar Automóvel</button>
 								</div>
-								<div class="shop_now_btn">					
-									<a href="excluiCarro">EXCLUIR</a>
-								</div>
-								<br/>       		
-							<%} %>
-						</form>
+							</div>
+				</form>
 				</div>
 				</div>
-			</div>
-		</div>
-	</div>
-	
+				</div>
+				</div>
+				</div>
+				
+
 <jsp:include page="footer.jsp" />
