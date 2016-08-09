@@ -13,21 +13,41 @@
 						<form action="editaCarro" method="POST" class="form-horizontal" role="form">
 
 							<div class="form-group">
-											<ul class="form-horizontal">
+										<table>
+											<tr class="form-horizontal">
+												<th>
+													<strong>ID: </strong>
+												</th>
+												<th>
+													<input readonly="true" type="text" value="<%out.println(carro.getId());%>">
+												</th>
+											</tr>
+											<tr class="form-horizontal">
+												<th>
+													<strong>MARCA: </strong>
+												</th>
+												<th>
+													<input name="marca" type="text" value="<%out.println(carro.getMarca());%>">
+												</th>
+											</tr>
+										</table>
+											<%-- <ul class="form-horizontal">
 			                    				<li style="height: 204px;">
 							                       <p>
-							                            <strong>Marca:</strong><br>
-							                            <strong>Modelo:</strong> <% out.println(carro.getModelo());%><br>
-							                            <strong>Ano Fabricação/Ano Modelo:</strong> <% out.println(carro.getAnoFabricacao());%><br>
-							                            <strong>Cor:</strong> <% out.println(carro.getCor());%><br>
-							                            <strong>Portas:</strong> <% out.println(carro.getPortas());%><br>
-							                            <strong>Dimensões - Comp./Largura/Altura (mm): </strong><% out.println(carro.getDimensoesCLA() );%><br>
-							                            <strong>Ocupantes:</strong> <% out.println(carro.getOcupantes());%><br>
+							                       		<strong>ID: </strong><input readonly="true" type="text" value="<%out.println(carro.getId());%>"><br/>
+							                            <strong>MARCA: </strong><input name="marca" type="text" value="<%out.println(carro.getMarca());%>"><br/>
+							                            <strong>MODELO: </strong><input name="modelo" type="text" value="<%out.println(carro.getModelo());%>"><br/>
+							                            <strong>Ano Fabricação/Ano Modelo: </strong><input name="anoFabricacao" type="text" value="<%out.println(carro.getAnoFabricacao());%>"><br>
+							                            <strong>Cor: </strong><input name="cor" type="text" value="<%out.println(carro.getCor());%>"><br>
+							                            <strong>Portas: </strong><input name="portas" type="text" value="<%out.println(carro.getPortas());%>"><br>
+							                            <strong>Dimensões - Comp./Largura/Altura (cm): </strong><input name="dimensoesCLA" type="text" value="<%out.println(carro.getDimensoesCLA());%>"><br>
+							                            <strong>Ocupantes: </strong><input name="ocupantes" type="text" value="<%out.println(carro.getOcupantes());%>"><br>
 							                        </p>
 							                    </li>
-							                    <li style="height: 204px;">
+							                   
+							                    <li style="height: 204px;"></br></br>
 							                         <p>
-									                   <strong>Combustível:</strong> <% out.println(carro.getMecSseg().getCombustivel());%><br>
+									                   <strong>Combustível:</strong><input name="combustivel" type="text" value="<%out.println(carro.getMecSseg().getCombustivel());%>"><br>
 									                   <strong>Motor:</strong> <% out.println(carro.getMecSseg().getMotor());%><br>
 									                   <strong>Potência:</strong> <% out.println(carro.getMecSseg().getMotor());%> CV<br>
 									                   <strong>Velocidade Máxima:</strong> <% out.println(carro.getMecSseg().getVelocidadeMax());%> Km/h<br>
@@ -39,7 +59,7 @@
 				                              		 </p>
 				                              		
 				                    			</li>
-				                    		</ul>
+				                    		</ul> --%>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12 text-center">

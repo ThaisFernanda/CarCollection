@@ -22,6 +22,7 @@ public class EditaCarro extends HttpServlet{
 	MecanicaSeguranca mecanica = new MecanicaSeguranca();
 	CarDao dao = new CarDao();
 	String idCarro;
+	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		idCarro =  req.getParameter("idCarro");

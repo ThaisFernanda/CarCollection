@@ -56,22 +56,21 @@
 						</div>
 					</div>
 					<div class="col-md-6">
-						<div class="header_top_right text-right">
-							<ul>
-								<% User usuario = (User)session.getAttribute("USUARIO");
-								if (usuario == null){%>
-									<li><a href="login.jsp">Registrar / Login</a></li>
+						<div class="header_top_right float-right">
+							<% User usuario = (User)session.getAttribute("USUARIO");
+							if (usuario == null){%>
+									<a href="login.jsp">Registrar / Login</a>
+								
 								<%} else {%>
-									<li><a><% out.println(usuario.getNome());%></a></li>
-										<li><form action="adicionaUsuario" method="POST" class="form-horizontal" role="form">
+									<form class="social_login" action="adicionaUsuario"  method="POST" role="form">
 										<input type="hidden" name="funcao" value="logout"/>
-											<input type="submit" value="Logout" />
-										</form></li>
-								<%}%>
-									
-							</ul>
-						</div>
-					</div> 
+										<a class="shop_now_btn" ><% out.println(usuario.getNome());%></a>
+										<input class="shop_now_btn" type="submit" value="Logout"/>;
+									</form>
+							
+							<%}%>
+						</div> 
+					</div>
 				</div>
 			</div>
 		</div>
