@@ -59,7 +59,7 @@
 						<div class="header_top_right float-right">
 							<% User usuario = (User)session.getAttribute("USUARIO");
 							if (usuario == null){%>
-									<a href="login.jsp">Registrar / Login</a>
+									<a class="shop_now_btn" href="login.jsp">Registrar / Login</a>
 								
 								<%} else {%>
 									<form class="social_login" action="adicionaUsuario"  method="POST" role="form">

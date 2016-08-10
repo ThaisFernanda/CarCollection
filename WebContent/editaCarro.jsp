@@ -10,28 +10,28 @@
 						<h4>Atualize as informações do seu carro.</h4>
 						<% Car carro = (Car) request.getAttribute("carro"); %>
 						
-						<form action="editaCarro" method="POST" class="form-horizontal" role="form">
+						<form action="editaCarro" method="POST" role="form">
 
 							<div class="form-group">
-										<table>
-											<tr class="form-horizontal">
+										<table class="form-horizontal">
+											<tr>
 												<th>
+													<p>
 													<strong>ID: </strong>
+													</p>
 												</th>
 												<th>
+													<p>
 													<input readonly="true" type="text" value="<%out.println(carro.getId());%>">
+													</p>
 												</th>
 											</tr>
-											<tr class="form-horizontal">
-												<th>
-													<strong>MARCA: </strong>
-												</th>
-												<th>
-													<input name="marca" type="text" value="<%out.println(carro.getMarca());%>">
-												</th>
+											<tr>
+												<th><p><strong>MARCA: </strong></p></th>
+												<th><p><input name="marca" type="text" value="<%out.println(carro.getMarca());%>"></p></th>
 											</tr>
 										</table>
-											<%-- <ul class="form-horizontal">
+											 <ul class="form-horizontal">
 			                    				<li style="height: 204px;">
 							                       <p>
 							                       		<strong>ID: </strong><input readonly="true" type="text" value="<%out.println(carro.getId());%>"><br/>
@@ -59,7 +59,7 @@
 				                              		 </p>
 				                              		
 				                    			</li>
-				                    		</ul> --%>
+				                    		</ul> 
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12 text-center">
