@@ -39,6 +39,7 @@ public class CarDao implements InterfaceCrudDAO<Car>{
 			stmt.setBoolean(9, carro.isConversivel());
 			stmt.setDouble(10, carro.getQuilometragem());
 			stmt.setDouble(11, carro.getValor());
+			stmt.setDouble(12, carro.getIdProprietario());
 			
 			stmt.execute();
 			stmt.close();
@@ -136,6 +137,7 @@ public class CarDao implements InterfaceCrudDAO<Car>{
 				carro.setConversivel(rs.getBoolean("conversivel"));
 				carro.setQuilometragem(rs.getDouble("quilometragem"));
 				carro.setValor(rs.getDouble("valor"));
+				carro.setIdProprietario(rs.getInt("id_dono"));
 				carros.add(carro);
 			}
 
@@ -232,7 +234,8 @@ public Car recuperaCarroMecanica(Integer idCarro){
 			carro.setPlaca(rs.getString("placa"));
 			carro.setConversivel(rs.getBoolean("conversivel"));
 			carro.setQuilometragem(rs.getDouble("quilometragem"));
-			carro.setValor(rs.getDouble("valor"));	
+			carro.setValor(rs.getDouble("valor"));
+			carro.setIdProprietario(rs.getInt("id_dono"));
 			carro.getMecSseg().setCombustivel(rs.getString("combustivel"));
 			carro.getMecSseg().setMotor(rs.getString("motor"));
 			carro.getMecSseg().setPotencia(rs.getInt("potencia"));

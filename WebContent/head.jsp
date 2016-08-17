@@ -86,8 +86,9 @@
 						<nav>
 							<ul>
 							<% if (usuario != null){%>
+								<li><a href="buscaMeuCarro">MEUS CARROS</a></li>
 								<li><a href="cadastro.jsp">CADASTRO</a></li>
-								<%}%>
+							<%}%>
 								<li><a href="buscaCarro">CATALOGO </a></li>
 								<li><a href="contato.jsp">CONTATO</a></li>
 							</ul>

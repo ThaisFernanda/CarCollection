@@ -1,5 +1,15 @@
+<%@page import="br.com.carcollection.modelo.User" %>
 <jsp:include page="head.jsp" />
-
+<% User usuario = (User)session.getAttribute("USUARIO");
+if (usuario == null){%>
+	<center>
+	<div class="product_img">
+				
+		<h1>Usuário não autenticado</h1>
+				
+	</div>
+	</center>
+<%} else {%>	
 	<!-- Contact-Section-End -->
 	<div class="contact_us section-padding">
 		<div class="container">
@@ -10,7 +20,7 @@
 						
 						<form action="adicionaCarro" method="POST" class="form-horizontal" role="form">
 
-
+					
 							<div class="form-group">
 
 								<div class="col-sm-12">
@@ -159,7 +169,7 @@
 									<input type="text" class="form-control" id="inputName" name="airBag" placeholder="AirBag">
 								</div>
 								<div class="col-sm-3">
-									<input type="text" class="form-control" id="inputEmail3" name="aceleracao"placeholder="Aceleracao">
+									<input type="text" class="form-control" id="inputEmail3" name="aceleracao" placeholder="Aceleracao">
 								</div>
 
 								<div class="col-sm-3">
@@ -171,10 +181,11 @@
 									  <option value="hidraulica">Hidráulica</option>
 									</select> 
 								</div>
-
 							</div>
 							<br>
-						<hr />
+							<input type="hidden" readonly="true"  name="idProprietario" type="text" value="<%out.println(usuario.getId());%>">
+							
+							<hr />
 							<div class="form-group">
 								<div class="col-sm-12">
 									<p>Imagem do Carro</p>
@@ -184,6 +195,7 @@
 								</div>
 
 							</div>
+							
 							<br>
 							<div class="form-group">
 								<div class="col-sm-12 text-center">
@@ -191,6 +203,7 @@
 										class=" shop_now_btn btn btn-default hvr-bounce-to-left">Cadastrar Automóvel</button>
 								</div>
 							</div>
+							
 						</form>
 					</div>
 				</div>
@@ -198,6 +211,8 @@
 			</div>
 		</div>
 	</div>
+	
+<%}%>
 	
 
 <jsp:include page="footer.jsp" />

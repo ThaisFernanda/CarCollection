@@ -7,7 +7,7 @@ public class SQL {
 	public static final String BUSCA_TODOS_USUARIOS = "select * from user order by nome";
 	public static final String BUSCA_USUARIO = "select * from user where id= ?";
 	
-	public static final String INSERE_CARRO = "INSERT INTO carro (portas,ocupantes,marca,modelo,cor,anoFabricacao,dimensoesCLA,placa,conversivel,quilometragem,valor)  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";		
+	public static final String INSERE_CARRO = "INSERT INTO carro (portas,ocupantes,marca,modelo,cor,anoFabricacao,dimensoesCLA,placa,conversivel,quilometragem,valor, id_dono)  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";		
 	public static final String UPDATE_CARRO = "update carro set portas = ?, ocupantes = ?, marca = ?, modelo = ?, cor = ?, anoFabricacao = ? , dimensoesCLA  = ?, placa  = ?,conversivel  = ?, quilometragem = ?, valor = ? where id_carro = ?";	
 	public static final String DELETA_CARRO = "delete from carro where  id_carro = ?";
 	public static final String BUSCA_TODOS_CARRO = "Select * from carro";

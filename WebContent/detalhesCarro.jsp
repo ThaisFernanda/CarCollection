@@ -46,8 +46,10 @@
 							
 						</form>
 						<form action="editaCarro" method="GET" class="form-horizontal" role="form">
-							<% User usuario = (User)session.getAttribute("USUARIO");
-							if (usuario != null){%>
+							<%
+								User usuario = (User)session.getAttribute("USUARIO");
+								if (usuario != null && (usuario.getId()==carro.getIdProprietario())) {
+							%>
 								<div class="form-group">
 										<a class="shop_now_btn" href="editaCarro?idCarro=<%=carro.getId()%>">EDITAR</a>
 										<a class="shop_now_btn" href="excluiCarro">EXCLUIR</a>

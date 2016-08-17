@@ -164,6 +164,7 @@ public class UserDaoImpl implements InterfaceCrudDAO<User>{
 				user.setNome(rs.getString("nome"));
 				user.setEmail(rs.getString("email"));
 				user.setLogin(rs.getString("login"));
+				user.setId(rs.getInt("id"));
 				return user;
 			}
 			

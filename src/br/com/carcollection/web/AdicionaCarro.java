@@ -23,6 +23,7 @@ public class AdicionaCarro extends HttpServlet {
 		
 		try {
 			// populando o carro
+			carro.setIdProprietario(Integer.valueOf(req.getParameter("idProprietario")));
 			carro.setPortas(Integer.valueOf(req.getParameter("portas")));
 			carro.setOcupantes(Integer.valueOf(req.getParameter("ocupantes")));
 			carro.setMarca(req.getParameter("marca"));
@@ -34,7 +35,8 @@ public class AdicionaCarro extends HttpServlet {
 			carro.setConversivel(Boolean.valueOf(req.getParameter("conversivel")));
 			carro.setQuilometragem(Double.valueOf(req.getParameter("quilometragem")));
 			carro.setValor(Double.valueOf(req.getParameter("valor")));
-
+			
+			
 			// populando a mecanica
 			mecanica.setPotencia(Integer.valueOf(req.getParameter("potencia")));
 			mecanica.setVelocidadeMax(Integer.valueOf(req.getParameter("velocidadeMax")));

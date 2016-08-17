@@ -17,6 +17,7 @@ public class Car {
 	private boolean conversivel;
 	private double quilometragem;
 	private double valor;
+	private int idProprietario;
 	
 	
 	public boolean isConversivel() {
@@ -103,6 +104,12 @@ public class Car {
 	}
 	public void setValor(double valor) {
 		this.valor = valor;
+	}
+	public int getIdProprietario() {
+		return idProprietario;
+	}
+	public void setIdProprietario(int idProprietario) {
+		this.idProprietario = idProprietario;
 	}
 	
 	
